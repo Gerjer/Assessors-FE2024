@@ -1,0 +1,63 @@
+<mat-card class="mat-elevation-z0">
+
+  <mat-toolbar>
+    <mat-toolbar-row>
+      Chart Of Accounts
+      <span class="spacer"></span>
+      <button mat-button [matMenuTriggerFor]="mmAction">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+
+  <mat-card-content>
+
+    <mat-tab-group>
+
+      <mat-tab label="Accounts">
+
+        <div class="tab-content-wrapper">
+
+          <app-account-list></app-account-list>
+
+        </div>
+
+      </mat-tab>
+
+      <mat-tab label="Account Types">
+
+        <div class="tab-content-wrapper">
+
+          <app-account-type-list></app-account-type-list>
+
+        </div>
+
+      </mat-tab>
+
+    </mat-tab-group>
+
+  </mat-card-content>
+
+
+</mat-card>
+
+
+<mat-menu #mmAction="matMenu" [overlapTrigger]="true">
+
+  <button mat-menu-item>
+    <mat-icon>add</mat-icon>
+    Account
+  </button>
+
+  <button mat-menu-item>
+    <mat-icon>add</mat-icon>
+    Account Type
+  </button>
+
+  <button mat-menu-item>
+    <mat-icon>refresh</mat-icon>
+    Refresh
+  </button>
+
+</mat-menu>

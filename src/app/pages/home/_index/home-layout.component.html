@@ -1,0 +1,67 @@
+<mat-sidenav-container>
+
+  <mat-sidenav mode="side" opened>
+
+    <mat-nav-list>
+
+      <a mat-list-item>
+        <mat-icon>dashboard</mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="Forms & Documents"
+        routerLink="/management/documents" routerLinkActive="active-link">
+        <mat-icon>tab</mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="Certificates" routerLink="/management/certificates" routerLinkActive="active-link">
+        <mat-icon>assignment</mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="General Settings" routerLink="/management/general-settings" routerLinkActive="active-link">
+        <mat-icon>settings</mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="Report Summary"
+        routerLink="/management/reports" routerLinkActive="active-link">
+        <mat-icon>content_paste</mat-icon>
+      </a>
+
+      <span class="spacer"></span>
+
+      <a mat-list-item matTooltip="Themes">
+        <mat-icon>palette</mat-icon>
+      </a>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <!-- <mat-toolbar>
+        <mat-toolbar-row>
+          <span>Home</span>
+          <span class="spacer"></span>
+          <button mat-button [matMenuTriggerFor]="mmAccount">
+            <mat-icon>person</mat-icon>
+            ceb1rparba@gmail.com
+          </button>
+        </mat-toolbar-row>
+    </mat-toolbar> -->
+
+    <div class="home-route-container" [@routeSliderAnimations]="prepareRoute(outlet)">
+
+      <router-outlet #outlet="outlet"></router-outlet>
+
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<mat-menu #mmAccount="matMenu">
+  <button mat-menu-item (click)="logout();">
+    <mat-icon></mat-icon>
+    Logout
+  </button>
+</mat-menu>

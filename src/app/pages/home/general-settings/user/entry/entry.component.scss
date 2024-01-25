@@ -1,0 +1,23 @@
+
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-toolbar {
+  min-width: 700px;
+  width: calc(100vw - 850px);
+}
+
+
+.dialog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}

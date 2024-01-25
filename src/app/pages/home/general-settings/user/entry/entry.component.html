@@ -1,0 +1,129 @@
+<mat-toolbar>
+  User
+  <span class="spacer"></span>
+  <button tabindex="-1" mat-button [matMenuTriggerFor]="mmOption">
+    <mat-icon>settings</mat-icon>
+    Option
+  </button>
+</mat-toolbar>
+
+
+<div [formGroup]="rf" class="dialog-container">
+
+  <mat-accordion>
+
+    <mat-expansion-panel #expPanelInfo [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Information
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <section id="profile">
+
+        <mat-form-field>
+          <mat-label>Code</mat-label>
+          <input matInput formControlName="code">
+          <mat-hint>This field is optional</mat-hint>
+          <mat-error *ngIf="rf.get('code')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="rf.get('email')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password">
+          <mat-error *ngIf="rf.get('password')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Confirm Password</mat-label>
+          <input matInput formControlName="confirm_password">
+          <mat-error *ngIf="rf.get('confirm_password')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+      </section>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel #expPanelDet (closed)="expPanelInfo.expanded">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Details
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <section id="department-head">
+
+        <mat-form-field>
+          <mat-label>Sequence</mat-label>
+          <input matInput formControlName="sequence">
+          <mat-hint>This field is optional</mat-hint>
+          <mat-error *ngIf="rf.get('sequence')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Employee</mat-label>
+          <input matInput [matAutocomplete]="departmentHead">
+          <mat-autocomplete #departmentHead="matAutocomplete">
+            <mat-option value="Yeah">Yeah</mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Firstname</mat-label>
+          <input matInput formControlName="first_name">
+          <mat-error *ngIf="rf.get('first_name')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Lastname</mat-label>
+          <input matInput formControlName="last_name">
+          <mat-error *ngIf="rf.get('last_name')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Gender</mat-label>
+          <mat-select>
+            <mat-option value="Male">Male</mat-option>
+            <mat-option value="Female">Female</mat-option>
+          </mat-select>
+          <mat-error *ngIf="rf.get('sequence')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+      </section>
+
+    </mat-expansion-panel>
+
+
+  </mat-accordion>
+
+  <mat-card-actions>
+    <button mat-button>
+      Submit
+    </button>
+  </mat-card-actions>
+
+</div>
+
+
+<mat-menu #mmOption>
+  <button mat-menu-item>
+    <mat-icon>refresh</mat-icon>
+    Clear Entry
+  </button>
+  <button mat-menu-item mat-dialog-close>
+    <mat-icon></mat-icon>
+    Close
+  </button>
+</mat-menu>

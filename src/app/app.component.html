@@ -1,0 +1,12 @@
+<mat-toolbar color="primary" *ngIf="!(loggedIn$ | async)" [@toolbarAnimation]>
+  <mat-toolbar-row>
+    Real Property Tax Management
+    <span class="spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div class="app-container" [@routeFaderAnimations]="prepareRoute(outlet)">
+
+  <router-outlet #outlet="outlet"></router-outlet>
+
+</div>

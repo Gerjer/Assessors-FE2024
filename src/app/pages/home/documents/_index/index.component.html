@@ -1,0 +1,79 @@
+
+<mat-sidenav-container>
+
+  <mat-sidenav mode="side" opened>
+
+    <mat-toolbar>
+      <mat-toolbar-row>
+        Forms & Documents
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <mat-nav-list>
+
+      <ng-container *ngFor="let route of routes">
+
+        <ng-container *ngIf="route.children.length; then childRoutes; else parentRoutes">
+        </ng-container>
+
+        <ng-template #childRoutes>
+
+          <a mat-list-item (click)="parentMenuToggle(route)">
+            <mat-icon>{{route.icon}}</mat-icon>
+            <p>{{route.title}}</p>
+            <span class="spacer"></span>
+            <mat-icon [@expand_menu]="parentMenuToggleState(route) ? 'collapsed': 'expand' ">navigate_next</mat-icon>
+          </a>
+          <mat-divider></mat-divider>
+
+          <div *ngIf="parentMenuToggleState(route)"
+            [@expandOpenClosed]="parentMenuToggleState(route)"
+            class="child-routes-container">
+
+            <ng-container *ngFor="let childRoute of route.children">
+
+              <a mat-list-item
+                [routerLink]="childRoute.route"
+                routerLinkActive="active-link">
+                <mat-icon>{{childRoute.icon}}</mat-icon>
+                <p>{{childRoute.title}}</p>
+              </a>
+
+            </ng-container>
+
+          </div>
+
+        </ng-template>
+
+        <ng-template #parentRoutes>
+
+          <a mat-list-item
+            [routerLink]="route.route"
+            routerLinkActive="active-link">
+            <mat-icon>{{route.icon}}</mat-icon>
+            <p>{{route.title}}</p>
+          </a>
+
+        </ng-template>
+
+
+      </ng-container>
+
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <mat-toolbar>
+      <mat-toolbar-row>
+        Documents
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <router-outlet></router-outlet>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

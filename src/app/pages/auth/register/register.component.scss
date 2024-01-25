@@ -1,0 +1,101 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+mat-card {
+  padding: 50px 10px;
+}
+
+
+mat-card-content {
+  display: flex;
+  flex-direction: row;
+  padding: 0 20px;
+}
+
+mat-icon {
+  color: gray;
+}
+
+.title {
+  font-size: 2.2em;
+  font-weight: 500;
+}
+
+
+button.mat-flat-button {
+  border-radius: 50px !important;
+  font-weight: 400;
+  height: 38px;
+  font-size: .9em;
+  transition: transform 0.2s ease;
+  box-shadow: 0 5px 12px rgba(0,0,0, 0.1);
+}
+
+button.mat-flat-button:active {
+  transform: scale(0.96);
+}
+
+.login-image {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 500px;
+}
+
+.login-image img {
+
+  border-radius: 200px;
+  transform: scale(.55);
+
+}
+
+.register-entry {
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 30px 0;
+
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.register-name {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.register-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-button-divider {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin: 10px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-button-divider span {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.register-button-divider mat-divider.mat-divider {
+  width: 15%;
+}
+

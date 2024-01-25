@@ -1,0 +1,71 @@
+
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-sidenav-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-sidenav {
+  height: 100%;
+  width: 300px;
+}
+
+mat-sidenav-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-nav-list {
+  overflow-y: auto;
+}
+
+mat-nav-list a.mat-list-item {
+  // border-radius: 5px;
+  overflow: hidden;
+  font-size: .85rem;
+}
+
+
+mat-nav-list a.mat-list-item mat-icon {
+  margin-right: 8px;
+}
+
+mat-icon {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 64px;
+  padding: 0 12px;
+}
+
+.title-container .title {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.outlet-general-settings {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.child-routes-container {
+  overflow: hidden;
+  background-color: whitesmoke;
+}

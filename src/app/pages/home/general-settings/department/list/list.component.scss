@@ -1,0 +1,86 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+mat-icon {
+  color: gray;
+}
+
+.action-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
+
+.action-button-container mat-icon {
+  transform: scale(.9);
+}
+
+.action-button-container button.mat-button {
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.action-button-container button.mat-button:active:not([disabled]) {
+  transform: scale(0.86);
+}
+
+.mat-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 8px;
+}
+
+.table-wrapper {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.mat-column-code {
+  width: 150px;
+}
+
+.mat-column-name {
+  width: 300px;
+}
+
+.mat-column-lead {
+  min-width: 300px;
+}
+
+
+.mat-column-actions {
+  width: 100px;
+  text-align: center;
+}
+
+.mat-column-classification {
+  width: 250px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  gap: 8px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.action-container {
+  flex: 0 ;
+  width: 200px;
+}

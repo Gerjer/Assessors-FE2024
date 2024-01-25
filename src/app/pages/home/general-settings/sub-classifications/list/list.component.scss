@@ -1,0 +1,51 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0.2rem .3rem;
+  height: 100%;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.table-wrapper {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.mat-column-code {
+  width: 150px;
+}
+
+.mat-column-name {
+  width: 250px;
+}
+
+.mat-column-description {
+  min-width: 250px;
+}
+
+.mat-column-actions {
+  width: 100px;
+  text-align: center;
+}
+
+.mat-column-classification {
+  width: 250px;
+}

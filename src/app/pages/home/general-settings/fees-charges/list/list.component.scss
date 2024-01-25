@@ -1,0 +1,42 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+
+.mat-card-content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10px;
+}
+
+
+.table-wrapper {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.mat-column-code {
+  width: 150px;
+}
+
+.mat-column-name {
+  width: 250px;
+}
+
+.mat-column-account-name {
+  min-width: 250px;
+}
+
+.mat-column-actions {
+  width: 100px;
+  text-align: center;
+}

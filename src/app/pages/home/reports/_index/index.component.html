@@ -1,0 +1,62 @@
+<mat-sidenav-container>
+
+  <mat-sidenav mode="side" opened>
+
+    <div class="title-container">
+      <span class="title">Reports</span>
+    </div>
+
+    <mat-nav-list>
+
+      <a mat-list-item routerLink="/management/reports/notice-of-assessments">
+        Notice of Assessment
+      </a>
+
+      <a mat-list-item routerLink="/management/reports/sworn-statements">
+        Sworn Statement
+      </a>
+
+      <a mat-list-item routerLink="/management/reports/assessment-rolls">
+        Assessment Roll
+      </a>
+
+      <a mat-list-item routerLink="/management/reports/classification-records">
+        Classification Record
+      </a>
+
+      <a mat-list-item routerLink="/management/reports/ownership-records">
+        Ownership Record
+      </a>
+
+      <a mat-list-item routerLink="/management/reports/record-of-assessments">
+        Record of Assessment
+      </a>
+
+      <a mat-list-item routerLink="/management/reports/tax-map-control-rolls">
+        Tax Map Control Roll
+      </a>
+
+      <a mat-list-item routerLink="/management/reports/monthly-reports">
+        Monthly Report
+      </a>
+
+      <a mat-list-item routerLink="/management/reports/quarterly-reports">
+        Quarterly Report
+      </a>
+
+    </mat-nav-list>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+
+    <div class="home-route-container" [@routeSliderAnimations]="prepareRoute(outlet)">
+
+      <router-outlet #outlet="outlet"></router-outlet>
+
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+

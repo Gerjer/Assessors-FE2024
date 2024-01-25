@@ -1,0 +1,100 @@
+<mat-toolbar>
+  Department
+  <span class="spacer"></span>
+  <button tabindex="-1" mat-button [matMenuTriggerFor]="mmOption">
+    <mat-icon>settings</mat-icon>
+    Option
+  </button>
+</mat-toolbar>
+
+<div [formGroup]="rf" class="dialog-container">
+
+  <mat-accordion>
+
+    <mat-expansion-panel [(expanded)]="profile_exp">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Information
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <section id="profile">
+
+        <mat-form-field>
+          <mat-label>Code</mat-label>
+          <input matInput formControlName="code">
+          <mat-error *ngIf="rf.get('code')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+          <mat-error *ngIf="rf.get('name')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+
+      </section>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel [expanded]="!profile_exp ? true : false" (closed)="profile_exp = true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Details
+        </mat-panel-title>
+        <mat-panel-description>
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <section id="department-head">
+
+        <mat-form-field>
+          <mat-label>Sequence</mat-label>
+          <input matInput formControlName="sequence">
+          <mat-error *ngIf="rf.get('sequence')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Department Head/Manager</mat-label>
+          <input matInput [matAutocomplete]="departmentHead">
+          <mat-autocomplete #departmentHead="matAutocomplete">
+            <mat-option value="Yeah">Yeah</mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+
+      </section>
+
+    </mat-expansion-panel>
+
+
+  </mat-accordion>
+
+  <mat-card-actions>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    <button mat-button>
+      Submit
+    </button>
+  </mat-card-actions>
+
+</div>
+
+
+
+<mat-menu #mmOption="matMenu" [overlapTrigger]="true">
+  <button mat-menu-item (click)="rf.reset();">
+    <mat-icon>reset</mat-icon>
+    Reset
+  </button>
+  <button mat-menu-item (click)="dialogRef.close();">
+    <mat-icon>close</mat-icon>
+    Close
+  </button>
+</mat-menu>

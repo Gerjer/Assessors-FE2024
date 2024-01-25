@@ -1,0 +1,91 @@
+<mat-card>
+
+  <mat-card-content>
+
+    <div class="login-image">
+
+      <img [src]="favicon" alt="login logo">
+
+    </div>
+
+    <div [formGroup]="rf" class="register-entry">
+
+      <h1 class="title">Sign Up</h1>
+
+      <div class="register-name">
+
+        <mat-form-field>
+          <mat-icon matPrefix>account_circle</mat-icon>
+          <mat-label>Firstname</mat-label>
+          <input matInput type="text" formControlName="firstname">
+          <mat-error *ngIf="rf.get('firstname')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-icon matPrefix>account_circle</mat-icon>
+          <mat-label>Lastname</mat-label>
+          <input matInput type="text" formControlName="lastname">
+          <mat-error *ngIf="rf.get('firstname')?.hasError('required')">This field is required</mat-error>
+        </mat-form-field>
+
+      </div>
+
+      <mat-form-field>
+        <mat-icon matPrefix>account_circle</mat-icon>
+        <mat-label>Gender</mat-label>
+        <mat-select formControlName="gender">
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+        </mat-select>
+        <mat-error *ngIf="rf.get('gender')?.hasError('required')">This field is required</mat-error>
+      </mat-form-field>
+
+      <br>
+
+      <mat-form-field>
+        <mat-icon matPrefix>mail</mat-icon>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" formControlName="email">
+        <mat-error *ngIf="rf.get('email')?.hasError('required')">This field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-icon matPrefix>lock</mat-icon>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" autocomplete="off" formControlName="password">
+        <mat-error *ngIf="rf.get('password')?.hasError('required')">This field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-icon matPrefix>lock</mat-icon>
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" autocomplete="off" formControlName="confirm_password">
+        <mat-error *ngIf="rf.get('confirm_password')?.hasError('required')">This field is required</mat-error>
+      </mat-form-field>
+
+      <br>
+
+      <div class="register-button">
+
+        <button mat-flat-button color="primary" [disabled]="rf.invalid" (click)="register();">
+          Register
+        </button>
+
+
+        <div class="register-button-divider">
+          <mat-divider inset></mat-divider>
+          <span>Already have an account ?</span>
+          <mat-divider inset></mat-divider>
+        </div>
+
+        <button mat-flat-button color="accent" (click)="login();">
+          Back to Login
+        </button>
+
+      </div>
+
+    </div>
+
+  </mat-card-content>
+
+</mat-card>

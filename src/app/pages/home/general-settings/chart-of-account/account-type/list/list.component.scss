@@ -1,0 +1,50 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.table-wrapper {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.mat-column-code {
+  width: 150px;
+}
+
+.mat-column-email {
+  width: 300px;
+}
+
+.mat-column-name {
+  min-width: 250px;
+}
+
+.mat-column-gender {
+  width: 150px;
+}
+
+.mat-column-actions {
+  width: 100px;
+  text-align: center;
+}

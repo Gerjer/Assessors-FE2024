@@ -1,0 +1,118 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+mat-card {
+  background-color: whitesmoke;
+  padding: 50px 10px;
+}
+
+
+mat-card-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+mat-icon {
+  color: gray;
+}
+
+
+button.mat-flat-button {
+  border-radius: 50px !important;
+  font-weight: 400;
+  height: 38px;
+  font-size: .85em;
+  transition: transform 0.2s ease;
+  box-shadow: 0 5px 10px rgba(0,0,0, 0.1);
+}
+
+button.mat-flat-button:active:not([disabled]) {
+  transform: scale(0.96);
+}
+
+.title {
+  font-size: 2.2em;
+  font-weight: 500;
+}
+
+.login-image {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  width: 500px;
+}
+
+.login-image img {
+
+  // height: 500px;
+  // width: 500px;
+  border-radius: 200px;
+  transform: scale(.55);
+}
+
+.login-entry {
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 0 30px 0;
+  width: 350px;
+
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.forgot-password {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 8px;
+}
+
+.forgot-password button.mat-flat-button {
+  font-weight: 400;
+  font-size: .7em;
+}
+
+.login-button {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-button button.mat-flat-button {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.login-button span {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.login-button-divider {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-button-divider mat-divider.mat-divider {
+  width: 15%;
+}

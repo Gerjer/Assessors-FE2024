@@ -1,0 +1,81 @@
+<mat-toolbar>
+
+  <mat-toolbar-row>
+    Departments
+    <span class="spacer"></span>
+
+    <div class="action-button-container">
+
+      <button mat-button (click)="reload();">
+        <mat-icon>refresh</mat-icon>
+        Reload Data
+      </button>
+      <button mat-button (click)="newDepartment(); ">
+        <mat-icon>add</mat-icon>
+        New Department
+      </button>
+
+    </div>
+
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<div class="table-container"  mat-card-content>
+
+  <div class="table-wrapper">
+
+    <table mat-table [dataSource]="tblData">
+
+      <ng-container *ngFor="let column of tblColumns; let last = last;" [matColumnDef]="column.columnDef" [stickyEnd]="last">
+
+        <th mat-header-cell *matHeaderCellDef>{{column.header}}</th>
+
+        <td mat-cell *matCellDef="let element">
+
+          <ng-container [ngSwitch]="column.type">
+
+            <ng-container *ngSwitchCase="'Actions'">
+              <ng-container *ngTemplateOutlet="actions"></ng-container>
+            </ng-container>
+
+            <ng-container *ngSwitchDefault>
+              <ng-container *ngTemplateOutlet="default"></ng-container>
+            </ng-container>
+
+            <ng-template #actions>
+              <button mat-icon-button>
+                <mat-icon>pending_actions</mat-icon>
+              </button>
+            </ng-template>
+
+            <ng-template #default>
+              {{column.cell(element)}}
+            </ng-template>
+
+          </ng-container>
+
+        </td>
+
+
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="tblColumnDef; sticky: true;"></tr>
+      <tr mat-row *matRowDef="let row; columns: tblColumnDef"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td *ngIf="!fetching" class="mat-cell" [colSpan]="tblColumnDef.length">No Data...</td>
+        <td *ngIf="fetching" class="mat-cell" [colSpan]="tblColumnDef.length">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+  <mat-paginator></mat-paginator>
+
+</div>
+
+

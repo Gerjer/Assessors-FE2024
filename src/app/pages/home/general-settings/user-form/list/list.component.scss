@@ -1,0 +1,71 @@
+:host {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+}
+
+.action-container {
+  background-color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  height: 64px;
+  padding: 0 24px;
+}
+
+.action-container mat-form-field {
+  width: 350px;
+}
+
+.action-container .action-button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  padding-bottom: 8px;
+}
+
+.action-container .action-button-container button.mat-button {
+  font-size: .75rem;
+  font-weight: 450;
+  transition: transform .3s ease;
+}
+
+.action-container .action-button-container button.mat-button mat-icon {
+  transform: scale(.9);
+}
+
+.action-container .action-button-container button.mat-button:active:not([disabled]) {
+  transform: scale(.96);
+}
+
+.table-wrapper {
+  background-color: whitesmoke;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+.mat-column-name {
+  min-width: 250px;
+}
+
+.mat-column-actions {
+  width: 100px;
+  text-align: center;
+}
