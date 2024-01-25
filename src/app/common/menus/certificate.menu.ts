@@ -1,4 +1,4 @@
-import { IMenu } from "../interfaces/definitions";
+import { IMenu } from '../interfaces/definitions';
 
 export const CertificateMenu: IMenu[] = [
   {
@@ -10,21 +10,21 @@ export const CertificateMenu: IMenu[] = [
         title: 'No Landholding Property',
         route: '/management/certificates/no-landholding-properties',
         icon: '',
-        children: []
+        children: [],
       },
       {
         title: 'Ownership',
         route: '/management/certificates/ownerships',
         icon: '',
-        children: []
+        children: [],
       },
       {
         title: 'Total Landholding',
         route: '/management/certificates/total-landholdings',
         icon: '',
-        children: []
-      }
-    ]
+        children: [],
+      },
+    ],
   },
   {
     title: 'Property Condition',
@@ -35,15 +35,15 @@ export const CertificateMenu: IMenu[] = [
         title: 'No Improvement',
         route: '/management/certificates/no-improvements',
         icon: '',
-        children: []
+        children: [],
       },
       {
         title: 'With Improvement',
         route: '/management/certificates/with-improvements',
         icon: '',
-        children: []
-      }
-    ]
+        children: [],
+      },
+    ],
   },
   {
     title: 'Authenticated Document',
@@ -54,9 +54,9 @@ export const CertificateMenu: IMenu[] = [
         title: 'Certified True Copy',
         route: '',
         icon: '',
-        children: []
-      }
-    ]
+        children: [],
+      },
+    ],
   },
   {
     title: 'Cartography',
@@ -67,15 +67,33 @@ export const CertificateMenu: IMenu[] = [
         title: 'Sketch Mapping',
         route: '/management/certificates/sketch-mappings',
         icon: '',
-        children: []
+        children: [],
       },
       {
         title: 'Vicinity Map',
         route: '/management/certificates/vicinity-maps',
         icon: '',
-        children: []
-      }
-    ]
+        children: [],
+      },
+    ],
   },
-
-]
+  {
+    title: 'Payments',
+    route: '',
+    icon: 'public',
+    children: [
+      {
+        title: 'Ordery of Payments',
+        route: '/management/certificates/order-payments',
+        icon: '',
+        children: [],
+      },
+      // {
+      //   title: 'Vicinity Map',
+      //   route: '/management/certificates/vicinity-maps',
+      //   icon: '',
+      //   children: []
+      // }
+    ],
+  },
+];

@@ -1,3 +1,4 @@
+import { MatCardModule } from '@angular/material/card';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +8,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AuthModule } from './pages/auth/auth.module';
 import { HomeModule } from './pages/home/home.module';
 
-import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import {
+  MAT_FORM_FIELD_DEFAULT_OPTIONS,
+  MatFormFieldModule,
+} from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -22,9 +26,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,
@@ -38,7 +40,9 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatButtonModule,
     MatIconModule,
     AuthModule,
-    HomeModule
+    HomeModule,
+    MatCardModule,
+    MatFormFieldModule,
   ],
   exports: [
     FormsModule,
@@ -46,7 +50,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     MatDialogModule,
     ScrollingModule,
     MatAutocompleteModule,
-    OverlayModule
+    OverlayModule,
   ],
   providers: [
     AuthGuard,
@@ -54,9 +58,9 @@ import { OverlayModule } from '@angular/cdk/overlay';
     // AuthInterceptor,
     {
       provide: MAT_FORM_FIELD_DEFAULT_OPTIONS,
-      useValue: { appearance: 'outline' }
-    }
+      useValue: { appearance: 'outline' },
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

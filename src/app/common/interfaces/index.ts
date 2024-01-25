@@ -5,9 +5,6 @@ export * from './home/general-settings/signatory/signatory.interface';
 export * from './home/general-settings/department/department.interface';
 export * from './home/general-settings/user/user.interface';
 
-
-
-
 export * from './home/certificates/sketch-mapping.interface';
 export * from './home/certificates/vicinity-map.interface';
 export * from './home/certificates/ownership.interface';
